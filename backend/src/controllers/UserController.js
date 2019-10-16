@@ -1,23 +1,23 @@
 const User = require("../models/User");
 
-let userController = {};
-
 module.exports = {
-  async post(req, res) {
+  async store(req, res) {
     const { email, password } = req.body;
 
     let user = await User.findOne({ email });
 
-    if (!email || !password) {
+    if (email && password) {
+      if (!user) {
+        return res.json({ message: `Usuário não cadastrado` });
+      } else if (password !== user.password) {
+        return res.json({ message: `Senha incorreta` });
+      }
+    } else {
       return res.json({ message: `Preencha todos os campos` });
     }
 
-    if (!user) {
-      return res.json({ message: `Usuário não cadastrado` });
-    }
-
-    if (password !== user.password) {
-      return res.json({ message: `Senha incorreta` });
+    if (password == user.password) {
+      return res.json({ message: `Entrou` });
     }
 
     return res.json(user);
