@@ -1,5 +1,5 @@
 const express = require('express');
-const routes = require('./routes');
+const routes = require('./backend/src/routes/routes');
 const mongoose = require('mongoose');
 const server = express();
 
@@ -10,4 +10,4 @@ mongoose.connect('mongodb://admin:admin@dev-shard-00-00-zj87b.mongodb.net:27017,
 
 server.use(express.json());
 server.use(routes);
-server.listen(3333);
+server.listen(3000);
