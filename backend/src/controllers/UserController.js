@@ -1,25 +1,25 @@
 const User = require("../models/User");
+const bcrypt = require("bcrypt");
 
 module.exports = {
   async store(req, res) {
     const { email, password } = req.body;
-
-    let user = await User.findOne({ email });
-
-    if (email && password) {
+    await User.findOne({
+      email
+    }).then(function (user) {
       if (!user) {
-        return res.json({ message: `Usuário não cadastrado` });
-      } else if (password !== user.password) {
-        return res.json({ message: `Senha incorreta` });
+        return res.send("Usuário não cadastrado");
+      } else {
+        bcrypt.compare(password, user.password, function (err, result) {
+          if (result == true) {
+            return res.redirect('/login/id');
+          } else {
+            return res.send("Senha incorreta");
+          }
+        })
       }
-    } else {
-      return res.json({ message: `Preencha todos os campos` });
-    }
-
-    if (password == user.password) {
-      return res.json({ message: `Entrou` });
-    }
-
-    return res.json(user);
+    }).catch(function (error) {
+      console.log(error);
+    });
   }
 };

@@ -1,5 +1,5 @@
 const express = require('express');
-const routes = require('./backend/src/routes/routes');
+const routes = require('./src/routes/routes');
 const mongoose = require('mongoose');
 const server = express();
 
