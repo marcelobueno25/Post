@@ -12,4 +12,4 @@ routes.get("/teste", (_, res) => {
     res.send({ message: 'teste' })
 });
 
-module.exports = routes;
+export default routes;
