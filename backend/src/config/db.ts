@@ -1,5 +1,4 @@
-
-const mongoose = require('mongoose')
+/* const mongoose = require('mongoose')
 const dbURI = 'mongodb://admin:admin@dev-shard-00-00-zj87b.mongodb.net:27017,dev-shard-00-01-zj87b.mongodb.net:27017,dev-shard-00-02-zj87b.mongodb.net:27017/test?ssl=true&replicaSet=Dev-shard-0&authSource=admin&retryWrites=true&w=majority'
 
 mongoose.Promise = global.Promise
@@ -12,7 +11,7 @@ mongoose.connection.on('connected', function () {
     console.log('Conexão Mongoose - Conectado')
 })
 
-mongoose.connection.on('error', function (err) {
+mongoose.connection.on('error', function (err:any) {
     console.log('Conexão Mongoose - ERRO: ')
     console.log(err);
 })
@@ -32,4 +31,4 @@ process.on('SIGINT', function () {
     })
 })
 
-module.exports = mongoose
+module.exports = mongoose */
