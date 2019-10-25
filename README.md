@@ -1,2 +1,2 @@
 # Post
-Projeto feito com React e React Native
+Projeto feito com NodeJs, React e React Native
