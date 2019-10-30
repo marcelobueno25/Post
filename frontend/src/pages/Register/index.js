@@ -1,4 +1,4 @@
-import api from '../../services/api';
+// import api from '../../services/api';
 import React from 'react';
 
 export default function Register({ history }) {

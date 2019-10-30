@@ -4,14 +4,22 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --watch 'src/' --exec \"ts-node serve.ts\" -e ts",
-    "test": "jest --no-cache",
-    "build": "tsc",
-    "prod": "npm run build && node dist/express-config.js"
+    "dev": "nodemon src/server.ts",
+    "build": "sucrase ./src -d ./dist --transforms typescript, imports"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
+    "@types/cors": "^2.8.6",
     "@types/jest": "^24.0.19",
+    "@typescript-eslint/eslint-plugin": "^2.6.0",
+    "@typescript-eslint/parser": "^2.6.0",
+    "eslint": "^6.6.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "jest": "^24.9.0",
     "ts-jest": "^24.1.0",
     "ts-node": "^8.4.1",
@@ -24,9 +32,11 @@
     "@types/supertest": "^2.0.8",
     "bcryptjs": "^2.4.3",
     "consign": "^0.1.6",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.7.7",
     "nodemon": "^1.19.4",
+    "sucrase": "^3.10.1",
     "supertest": "^4.0.2"
   }
 }
