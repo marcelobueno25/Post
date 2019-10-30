@@ -5,7 +5,11 @@ module.exports = {
     node: true
   },
   plugins: ["@typescript-eslint"],
-  extends: ["plugin:@typescript-eslint/recommended", "standard"],
+  extends: [
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "standard"
+  ],
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly"
