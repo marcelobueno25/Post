@@ -4,9 +4,9 @@ module.exports = {
     es6: true,
     node: true
   },
-  plugins: ["@typescript-eslint"],
   extends: [
     "plugin:@typescript-eslint/recommended",
+    "prettier",
     "prettier/@typescript-eslint",
     "standard"
   ],
@@ -14,9 +14,14 @@ module.exports = {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly"
   },
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: "module"
   },
-  rules: {}
+  plugins: ["@typescript-eslint"],
+  rules: {
+    quotes: ["error", "double"],
+    semi: ["error", "always"]
+  }
 };
