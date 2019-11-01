@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import api from "../../services/api";
 
 
@@ -9,10 +8,10 @@ export default function Login({ history }) {
 
   async function handleSubmit(event) {
     event.preventDefault();
-
     const response = await api.post("/login", { email, password });
-    const { id } = response.data;
-    console.log(id);
+    console.log(response.data.data);
+    const { _id } = response.data.data;
+    console.log(_id);
     history.push("/login");
   }
 
@@ -32,6 +31,7 @@ export default function Login({ history }) {
           type="password"
           id="password"
           placeholder="Senha"
+          autoComplete="password"
           value={password}
           onChange={event => setPassword(event.target.value)}
         />
