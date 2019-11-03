@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import api from "../../services/api";
 
-
 export default function Register({ history }) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -10,9 +9,6 @@ export default function Register({ history }) {
     async function handleSubmit(event) {
         event.preventDefault();
         const response = await api.post("/register", { name, email, password });
-        const { id } = response.data;
-        console.log(id);
-        history.push("/register");
     }
 
     return (
