@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
+
+
+.bImage {
+  background-image: linear-gradient(#000, #333);
+  height: 100vh;
+  width: 100vw;
+
+  .contLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .left {
+      width: 100%;   
+      max-width: 180px;    
+    }
+
+    .formLogin {
+      height: 500px;
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 5px;
+      padding: 0 20px;
+
+      .typewriter h1 {
+        width: 100%;
+        max-width: 125px;
+        margin-bottom: 15px;
+        color: #fff;
+        font-family: monospace;
+        overflow: hidden;
+        border-right: .15em solid #fff;
+        white-space: nowrap;
+        letter-spacing: .3em;
+        animation:
+          typing 2s steps(20, end),
+          blink-caret .7s step-end infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0
+        }
+
+        to {
+          width: 100%
+        }
+      }
+
+      @keyframes blink-caret {
+
+        from,
+        to {
+          border-color: transparent
+        }
+
+        50% {
+          border-color: #fff;
+        }
+      }
+
+      .titleLogin {
+        font-size: 45px;
+        font-family: Staatliches;
+        text-align: center;
+        color: #fff;
+        letter-spacing: 2px;
+        font-weight: 300;
+        text-shadow: 2px 2px 5px rgba(0,0,0, .5);
+        margin: 0;
+      }
+
+      input {
+        border-radius: 5px;
+        padding: 13px;
+        margin-bottom: 10px;
+        border: 0;
+        color: #666666;
+        outline: none;
+      }
+
+      .savePassword {
+        display: flex;
+        align-items: center;
+
+        input[type=checkbox] {
+          margin: 0 5px 0 0;
+          min-width: 18px;
+          min-height: 18px;
+        }
+
+        .remember {
+          color: #eee;
+          text-shadow: 1px 1px 3px rgba(0,0,0, .5);
+        }
+      }
+
+      .btn {
+        border: 1px solid white;
+        border-radius: 5px;
+        padding: 15px 0;
+        letter-spacing: 1.5px;
+        background-color: transparent;
+        cursor: pointer;
+        outline: none;
+        color: white;
+        transition: .3s ease-in-out;
+        margin-top: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 12px;
+
+        &:hover {
+          border: 1px solid white;
+          text-shadow: 0 0 1px #fff,
+          0 0 2px #fff;
+        }
+      }
+    }
+
+    .right {
+      width: 100%;
+      max-width: 180px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .bImage {
+    
+    &::before {
+      content: "";
+      position: fixed;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      display: block;
+      background: url('../../../assets/bgMobile.jpg');
+      height: 100vh;
+      -webkit-filter: blur(3px);
+      -moz-filter: blur(3px);
+      -o-filter: blur(3px);
+      -ms-filter: blur(3px);
+      filter: blur(3px);
+    }
+    
+    .contLogin {
+      z-index: 1;
+      .left {
+        display: none;
+      }
+
+      .formLogin {
+        z-index: 1;
+
+        .typewriter h1 {
+          text-shadow: 2px 2px blue;
+        }
+
+        .btn {
+          background-color: #fff;
+          color: blue;
+          border: 0;
+
+          &:hover{
+            border: 0;
+          }
+        }
+      }
+      .right {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 701px) {
+  .bImage {
+
+    .contLogin {
+      z-index: 1;
+
+      .left {
+        width: 100%;
+        max-width: 100px;
+      }
+
+      .right {
+        width: 100%;
+        max-width: 100px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .bImage {
+
+    .contLogin {
+      z-index: 1;
+
+      .left {
+        width: 100%;
+        max-width: 150px;
+      }
+
+      .right {
+        width: 100%;
+        max-width: 150px;
+      }
+    }
+  }
+}
+

@@ -5,9 +5,7 @@ import './App.scss';
 function App() {
   return (
     <div className="container">
-      <div className="content">
-        <Router />
-      </div>
+      <Router />
     </div>
   );
 }

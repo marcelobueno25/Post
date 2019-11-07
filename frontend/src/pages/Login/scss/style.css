@@ -1,0 +1,9 @@
+.bImage {
+  margin: 0 auto;
+  background: url("../img/postbg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  width: 20vw;
+}
+/*# sourceMappingURL=style.css.map */
