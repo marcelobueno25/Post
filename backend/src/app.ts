@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
+import morgan from "morgan";
+import * as logger from "winston";
 
 import routes from "./routes";
 
@@ -13,7 +15,10 @@ class App {
     this.middlewares();
     this.database();
     this.routes();
+    this.logs();
   }
+
+
 
   private middlewares(): void {
     this.express.use(express.json());
@@ -33,6 +38,17 @@ class App {
   private routes(): void {
     this.express.use(routes);
   }
+
+  private logs(): void {
+    this.express.use(morgan("common", {
+      stream: {
+        write: function(mensagem){
+            logger.info(mensagem);
+        }
+      }
+    }));
+}
+
 }
 
 export default new App().express;

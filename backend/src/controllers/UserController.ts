@@ -1,7 +1,6 @@
 import * as bcrypt from "bcryptjs";
 import { Request, Response } from "express";
 import User from "../models/User";
-
 const salt = 5;
 class UserController {
   // Listar
