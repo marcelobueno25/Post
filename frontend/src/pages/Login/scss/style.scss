@@ -83,7 +83,7 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #EADBE2;
+    background-color: map-get($colors, 'lighter-lilac');
     border-radius: 5px;
     transform: translateX(-80px);
     overflow: hidden;
@@ -141,8 +141,8 @@ body {
   }
 
   &__title {
-    color: #33325A;
-    text-shadow: 2px 2px #ADBDB5;
+    color: map-get($colors, 'primary');
+    text-shadow: 2px 2px map-get($colors, 'light-green');
     letter-spacing: 2px;
     font-size: 34px;
     position: relative;
@@ -158,7 +158,7 @@ body {
       right: 0;
       width: 100%;
       height: 50%;
-      background-color: #D4B6C4;
+      background-color: map-get($colors, 'light-lilac');
       z-index: -1;
       opacity: .5;
     }
@@ -181,7 +181,7 @@ body {
       padding: 13px;
       margin-bottom: 10px;
       border: 1px solid #D0C6BC;
-      color: #33325A;
+      color: map-get($colors, 'primary');
       outline: none;
     }
 
@@ -196,7 +196,7 @@ body {
       }
 
       .remember {
-        color: #33325A;
+        color: map-get($colors, 'primary');
         font-family: Montserrat;
         font-size: 13px;
       }
@@ -207,10 +207,10 @@ body {
       border-radius: 5px;
       padding: 10px 15px;
       letter-spacing: 1.5px;
-      background-color: #33325A;
+      background-color: map-get($colors, 'primary');
       cursor: pointer;
       outline: none;
-      color: #fff;
+      color: map-get($colors, 'white');
       transition: .25s ease-in-out;
       margin-top: 20px;
       font-family: Montserrat;
@@ -218,389 +218,9 @@ body {
       font-size: 16px;
 
       &:hover {
-        border: 1px solid 33325A;
-        text-shadow: 0 0 1px #fff,
-        0 0 1px #fff;
+        text-shadow: 0 0 1px map-get($colors, 'white'),
+        0 0 1px map-get($colors, 'white');
       }
     }
   }
 }
-
-// .center {
-  
-//   .title {
-//     color: white;
-//     text-shadow: 2px 2px #33325A;
-//     letter-spacing: 2px;
-
-//     span {
-//       color: white;
-//       text-shadow: 2px 2px #33325A;
-//     }
-//   }
-
-//   .box {
-//     background: white;
-//     width: 40vw;
-//     height: 50vh;
-//     transition: 1s;
-//     box-shadow: 0 10px 15px rgba(0, 0, 0, .15);
-//     border-radius: 5px;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column;
-
-//     &:hover {
-//       box-shadow:
-//         // /* TOP */
-//         // 0 -40px 0 -20px black,
-//         // 0 -80px 0 -40px white,
-//         // 0 -120px 0 -60px black,
-//         // 0 -160px 0 -80px white,
-//         // /* BOTTOM */
-//         // 0 40px 0 -20px black,
-//         // 0 80px 0 -40px white,
-//         // 0 120px 0 -60px black,
-//         // 0 160px 0 -80px white,
-//         /* LEFT */
-//         -40px 0 0 -20px #33325A,
-//         -80px 0 0 -40px white,
-//         -120px 0 0 -60px #33325A,
-//         -160px 0 0 -80px white,
-//         /* RIGHT */
-//         40px 0 0 -20px #33325A,
-//         80px 0 0 -40px white,
-//         120px 0 0 -60px #33325A,
-//         160px 0 0 -80px white;
-
-//         border-radius: 50px;
-//     }
-
-//     .formLogin {
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-//       flex-direction: column;
-
-//       input {
-//         border-radius: 5px;
-//         padding: 13px;
-//         margin-bottom: 10px;
-//         border: 1px solid #D0C6BC;
-//         color: #33325A;
-//         outline: none;
-//       }
-
-//       .savePassword {
-//         display: flex;
-//         align-items: center;
-
-//         input[type=checkbox] {
-//           margin: 0 5px 0 0;
-//           min-width: 17px;
-//           min-height: 17px;
-//         }
-
-//         .remember {
-//           color: #33325A;
-//           // text-shadow: 1px 1px 3px rgba(0,0,0, .5);
-//           font-family: Montserrat;
-//         }
-//       }
-
-//       .btn {
-//         border: 0;
-//         border-radius: 5px;
-//         padding: 10px 15px;
-//         letter-spacing: 1.5px;
-//         background-color: #5E7DB5;
-//         cursor: pointer;
-//         outline: none;
-//         color: #fff;
-//         transition: .25s ease-in-out;
-//         margin-top: 20px;
-//         font-family: Montserrat;
-//         font-weight: 200;
-//         font-size: 16px;
-
-//         &:hover {
-//           border: 1px solid 33325A;
-//           text-shadow: 0 0 1px #fff,
-//           0 0 1px #fff;
-//         }
-//       }
-//     }
-//   }
-//}
-
-
-
-
-
-// @import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
-
-// .navbar {
-//   position: relative;
-//   top: 0;
-//   left: 0;
-//   background-color: #000;
-//   width: 100%;
-//   margin: 0;
-//   padding: 10px 10px;
-//   z-index: 1;
-
-//   .PostLogo {
-//     font-family: Staatliches;
-//     color: #fff;
-//     letter-spacing: 2px;
-//     margin: 0;
-//     padding: 0;
-//     text-shadow: 2px 2px blue;
-//   }
-// }
-
-// .bImage {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   background-image: linear-gradient(#000, #333);
-//   height: 100vh;
-//   width: 100vw;
-
-//   .contLogin {
-//     width: 100vw;
-//     height: 100vh;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-
-//     .left {
-//       width: 100%;   
-//       max-width: 180px;    
-//     }
-
-//     .formLogin {
-//       width: 400px;
-//       display: flex;
-//       flex-direction: column;
-//       justify-content: center;
-
-//       .typewriter h1 {
-//         width: 100%;
-//         max-width: 125px;
-//         margin-bottom: 15px;
-//         color: #fff;
-//         text-shadow: 2px 2px blue;
-//         font-family: Staatliches;
-//         overflow: hidden;
-//         border-right: .15em solid;
-//         white-space: nowrap;
-//         letter-spacing: .3em;
-//         animation:
-//           typing 2s steps(20, end),
-//           blink-caret .5s step-end infinite;
-//       }
-
-//       @keyframes typing {
-//         from {
-//           width: 0
-//         }
-
-//         to {
-//           width: 100%
-//         }
-//       }
-
-//       @keyframes blink-caret {
-
-//         from,
-//         to {
-//           border-color: transparent
-//         }
-
-//         50% {
-//           border-color: #fff;
-//         }
-//       }
-
-//       .titleLogin {
-//         font-size: 45px;
-//         font-family: Staatliches;
-//         text-align: center;
-//         color: #fff;
-//         letter-spacing: 2px;
-//         font-weight: 300;
-//         text-shadow: 2px 2px 5px rgba(0,0,0, .5);
-//         margin: 0;
-//       }
-
-//       input {
-//         border-radius: 5px;
-//         padding: 13px;
-//         margin-bottom: 10px;
-//         border: 0;
-//         color: #666666;
-//         outline: none;
-//       }
-
-//       .savePassword {
-//         display: flex;
-//         align-items: center;
-
-//         input[type=checkbox] {
-//           margin: 0 5px 0 0;
-//           min-width: 18px;
-//           min-height: 18px;
-//         }
-
-//         .remember {
-//           color: #eee;
-//           text-shadow: 1px 1px 3px rgba(0,0,0, .5);
-//           font-family: Staatliches;
-//           letter-spacing: 1.5px;
-//         }
-//       }
-
-//       .btn {
-//         border: 1px solid white;
-//         border-radius: 5px;
-//         padding: 15px 0;
-//         letter-spacing: 1.5px;
-//         background-color: transparent;
-//         cursor: pointer;
-//         outline: none;
-//         color: white;
-//         transition: .3s ease-in-out;
-//         margin-top: 20px;
-//         font-family: Staatliches;
-//         font-size: 18px;
-//         letter-spacing: 2px;
-//         text-transform: uppercase;
-
-//         &:hover {
-//           border: 1px solid white;
-//           text-shadow: 0 0 1px #fff,
-//           0 0 2px #fff;
-//         }
-//       }
-//     }
-
-//     .right {
-//       width: 100%;
-//       max-width: 180px;
-//     }
-//   }
-// }
-
-// @media screen and (max-width: 1000px) {
-//   .navbar {
-//     position: relative;
-//     top: 0;
-//     left: 0;
-//     background-color: #000;
-//     width: 100%;
-//     margin: 0;
-//     padding: 10px 10px;
-//     z-index: 2;
-
-//     .PostLogo {
-//       font-family: Staatliches;
-//       color: #fff;
-//       letter-spacing: 2px;
-//       margin: 0;
-//       padding: 0;
-//       text-shadow: 2px 2px blue;
-//     }
-//   }
-
-//   .bImage {
-    
-//     &::before {
-//       content: "";
-//       position: fixed;
-//       left: 0;
-//       right: 0;
-//       z-index: 1;
-//       display: block;
-//       background: url('../../../assets/bgMobile.jpg');
-//       height: 100vh;
-//       -webkit-filter: blur(3px);
-//       -moz-filter: blur(3px);
-//       -o-filter: blur(3px);
-//       -ms-filter: blur(3px);
-//       filter: blur(3px);
-//     }
-    
-//     .contLogin {
-//       width: 50vw;
-//       position: absolute;
-//       top: 0;
-//       left: 25%;
-
-//       .left {
-//         display: none;
-//       }
-
-//       .formLogin {
-//         z-index: 1;
-
-//         .typewriter h1 {
-//           text-shadow: 2px 2px blue;
-//         }
-
-//         .btn {
-//           background-color: #fff;
-//           color: blue;
-//           border: 0;
-
-//           &:hover{
-//             border: 0;
-//           }
-//         }
-//       }
-//       .right {
-//         display: none;
-//       }
-//     }
-//   }
-// }
-
-// // @media screen and (min-width: 701px) {
-// //   .bImage {
-
-// //     .contLogin {
-// //       z-index: 1;
-
-// //       .left {
-// //         width: 100%;
-// //         max-width: 100px;
-// //       }
-
-// //       .right {
-// //         width: 100%;
-// //         max-width: 100px;
-// //       }
-// //     }
-// //   }
-// // }
-
-// // @media screen and (min-width: 1000px) {
-// //   .bImage {
-
-// //     .contLogin {
-// //       z-index: 1;
-
-// //       .left {
-// //         width: 100%;
-// //         max-width: 150px;
-// //       }
-
-// //       .right {
-// //         width: 100%;
-// //         max-width: 150px;
-// //       }
-// //     }
-// //   }
-// // }
-
