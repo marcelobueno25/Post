@@ -1,6 +1,6 @@
 import * as bcrypt from "bcryptjs";
 import { Request, Response } from "express";
-import User from "../models/User";
+import User from "../models/User.model";
 
 const salt = 5;
 class UserController {
@@ -13,26 +13,28 @@ class UserController {
   // Cadastrar
   public async create (req: Request, res: Response): Promise<Response> {
     const { name, email } = req.body;
-    const user = await User.findOne({ email });
-    if (user) {
-      return res.send({ error: "Email já cadastrado" });
+    const userExists = await User.findOne({ email });
+
+    if (userExists) {
+      return res.status(400).json({ error: "User already registered" });
     }
+
     await bcrypt.hash(req.body.password, salt, function (_, hash) {
       User.create({
         name,
         email,
         password: hash
-      }).then(
-        function (user: any) {
+      })
+        .then(function (user: object) {
           return res.send({ user });
-        }
-      ).catch(() => {
-        return res.send({ error: "Problema para cadastrar Usuario" });
-      });
+        })
+        .catch(() => {
+          return res.status(400).send({ error: "Error registering " });
+        });
     });
   }
 
-  // Login
+  // // Login
   public async store (req: Request, res: Response): Promise<Response> {
     const { email, password } = req.body;
     const user = await User.findOne({
