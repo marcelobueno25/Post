@@ -1,218 +1,606 @@
 @import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,900&display=swap');
+@import '../../../App.scss';
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 
 
-.bImage {
-  background-image: linear-gradient(#000, #333);
+body {
   height: 100vh;
-  width: 100vw;
+  background-image: linear-gradient(#5E7DB5, #33325A);
+}
 
-  .contLogin {
+
+.cardLogin {
+  max-width: 650px;
+  width: 100%; 
+  background: map-get($colors, 'white');
+  box-shadow: 5px 5px 3px rgba(34, 35, 58, 0.5);
+  padding: 25px;
+  border-radius: 5px;
+  transition: all .3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('../../../assets/finaljuro.png');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+  }
+
+  @media screen and (max-width: 992px) {
+    // max-width: 680px;
+    // height: 400px;
+  }
+
+  @media screen and (max-width: 768px) {
+    min-height: 500px;
+    height: auto;
+    // margin: 180px auto;
+    width: 500px;
+  }
+
+  @media screen and (max-width: 500px) {
+    min-height: 500px;
+    height: auto;
+    margin: 180px auto;
+    width: 350px;
+  }
+
+
+  @media screen and (max-height: 500px) and (min-width: 992px) {
+    height: 350px;
+  }
+
+  &__item {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100%;
 
-    .left {
-      width: 100%;   
-      max-width: 180px;    
-    }
-
-    .formLogin {
-      height: 500px;
-      width: 400px;
-      display: flex;
+    @media screen and (max-width: 768px) {
       flex-direction: column;
-      justify-content: center;
-      border-radius: 5px;
-      padding: 0 20px;
-
-      .typewriter h1 {
-        width: 100%;
-        max-width: 125px;
-        margin-bottom: 15px;
-        color: #fff;
-        font-family: monospace;
-        overflow: hidden;
-        border-right: .15em solid #fff;
-        white-space: nowrap;
-        letter-spacing: .3em;
-        animation:
-          typing 2s steps(20, end),
-          blink-caret .7s step-end infinite;
-      }
-
-      @keyframes typing {
-        from {
-          width: 0
-        }
-
-        to {
-          width: 100%
-        }
-      }
-
-      @keyframes blink-caret {
-
-        from,
-        to {
-          border-color: transparent
-        }
-
-        50% {
-          border-color: #fff;
-        }
-      }
-
-      .titleLogin {
-        font-size: 45px;
-        font-family: Staatliches;
-        text-align: center;
-        color: #fff;
-        letter-spacing: 2px;
-        font-weight: 300;
-        text-shadow: 2px 2px 5px rgba(0,0,0, .5);
-        margin: 0;
-      }
-
-      input {
-        border-radius: 5px;
-        padding: 13px;
-        margin-bottom: 10px;
-        border: 0;
-        color: #666666;
-        outline: none;
-      }
-
-      .savePassword {
-        display: flex;
-        align-items: center;
-
-        input[type=checkbox] {
-          margin: 0 5px 0 0;
-          min-width: 18px;
-          min-height: 18px;
-        }
-
-        .remember {
-          color: #eee;
-          text-shadow: 1px 1px 3px rgba(0,0,0, .5);
-        }
-      }
-
-      .btn {
-        border: 1px solid white;
-        border-radius: 5px;
-        padding: 15px 0;
-        letter-spacing: 1.5px;
-        background-color: transparent;
-        cursor: pointer;
-        outline: none;
-        color: white;
-        transition: .3s ease-in-out;
-        margin-top: 20px;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-size: 12px;
-
-        &:hover {
-          border: 1px solid white;
-          text-shadow: 0 0 1px #fff,
-          0 0 2px #fff;
-        }
-      }
+      max-width: 100%;
     }
+  }
 
-    .right {
+  &__img {
+    width: 300px;
+    flex-shrink: 0;
+    height: 300px;
+    background-image: url('../../../assets/bgppl.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #EADBE2;
+    border-radius: 5px;
+    transform: translateX(-80px);
+    overflow: hidden;
+    box-shadow: 5px 5px 8px map-get($colors, 'shadow');
+
+    img {
       width: 100%;
-      max-width: 180px;
-    }
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .bImage {
-    
-    &::before {
-      content: "";
-      position: fixed;
-      left: 0;
-      right: 0;
-      z-index: 1;
+      height: 100%;
+      object-fit: cover;
       display: block;
-      background: url('../../../assets/bgMobile.jpg');
-      height: 100vh;
-      -webkit-filter: blur(3px);
-      -moz-filter: blur(3px);
-      -o-filter: blur(3px);
-      -ms-filter: blur(3px);
-      filter: blur(3px);
+      opacity: 0;
+      border-radius: 20px;
+      transition: all .3s;
     }
+
+
+    @media screen and (max-width: 992px) {
+      // width: 45%;
+    }
+
+    @media screen and (max-width: 768px) {
+      transform: translateY(-20%);
+      max-width: 100%;
+      width: 350px;
+    }
+
+    @media screen and (max-width: 568px) {
+      max-width: 100%;
+      width: 350px;
+    }
+
+    @media screen and (max-height: 500px) and (min-width: 992px) {
+      height: 270px;
+    }
+  }
+
+  &__content {
+    padding-right: 25px;
+
+    @media screen and (max-width: 768px) {
+      margin-top: -80px;
+      text-align: center;
+      padding: 0 30px;
+    }
+
+    @media screen and (max-width: 576px) {
+      padding: 0
+    }
+
+    >* {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: all .4s;
+    }
+  }
+
+  &__title {
+    color: #33325A;
+    text-shadow: 2px 2px #ADBDB5;
+    letter-spacing: 2px;
+    font-size: 34px;
+    position: relative;
+    z-index: 1;
+    margin-right: 5px;
+    white-space: nowrap;
+    text-align: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 50%;
+      background-color: #D4B6C4;
+      z-index: -1;
+      opacity: .5;
+    }
+  }
+
+  &__text {
+    color: #4e4a67;
+    margin-bottom: 30px;
+    line-height: 1.5em;
+  }
+
+  .formLogin {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    width: 250px;
+
+    input {
+      border-radius: 5px;
+      padding: 13px;
+      margin-bottom: 10px;
+      border: 1px solid #D0C6BC;
+      color: #33325A;
+      outline: none;
+    }
+
+    .savePassword {
+      display: flex;
+      align-items: center;
+
+      input[type=checkbox] {
+        margin: 0 5px 0 0;
+        min-width: 17px;
+        min-height: 17px;
+      }
+
+      .remember {
+        color: #33325A;
+        font-family: Montserrat;
+        font-size: 13px;
+      }
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 5px;
+      padding: 10px 15px;
+      letter-spacing: 1.5px;
+      background-color: #33325A;
+      cursor: pointer;
+      outline: none;
+      color: #fff;
+      transition: .25s ease-in-out;
+      margin-top: 20px;
+      font-family: Montserrat;
+      font-weight: 200;
+      font-size: 16px;
+
+      &:hover {
+        border: 1px solid 33325A;
+        text-shadow: 0 0 1px #fff,
+        0 0 1px #fff;
+      }
+    }
+  }
+}
+
+// .center {
+  
+//   .title {
+//     color: white;
+//     text-shadow: 2px 2px #33325A;
+//     letter-spacing: 2px;
+
+//     span {
+//       color: white;
+//       text-shadow: 2px 2px #33325A;
+//     }
+//   }
+
+//   .box {
+//     background: white;
+//     width: 40vw;
+//     height: 50vh;
+//     transition: 1s;
+//     box-shadow: 0 10px 15px rgba(0, 0, 0, .15);
+//     border-radius: 5px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-direction: column;
+
+//     &:hover {
+//       box-shadow:
+//         // /* TOP */
+//         // 0 -40px 0 -20px black,
+//         // 0 -80px 0 -40px white,
+//         // 0 -120px 0 -60px black,
+//         // 0 -160px 0 -80px white,
+//         // /* BOTTOM */
+//         // 0 40px 0 -20px black,
+//         // 0 80px 0 -40px white,
+//         // 0 120px 0 -60px black,
+//         // 0 160px 0 -80px white,
+//         /* LEFT */
+//         -40px 0 0 -20px #33325A,
+//         -80px 0 0 -40px white,
+//         -120px 0 0 -60px #33325A,
+//         -160px 0 0 -80px white,
+//         /* RIGHT */
+//         40px 0 0 -20px #33325A,
+//         80px 0 0 -40px white,
+//         120px 0 0 -60px #33325A,
+//         160px 0 0 -80px white;
+
+//         border-radius: 50px;
+//     }
+
+//     .formLogin {
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       flex-direction: column;
+
+//       input {
+//         border-radius: 5px;
+//         padding: 13px;
+//         margin-bottom: 10px;
+//         border: 1px solid #D0C6BC;
+//         color: #33325A;
+//         outline: none;
+//       }
+
+//       .savePassword {
+//         display: flex;
+//         align-items: center;
+
+//         input[type=checkbox] {
+//           margin: 0 5px 0 0;
+//           min-width: 17px;
+//           min-height: 17px;
+//         }
+
+//         .remember {
+//           color: #33325A;
+//           // text-shadow: 1px 1px 3px rgba(0,0,0, .5);
+//           font-family: Montserrat;
+//         }
+//       }
+
+//       .btn {
+//         border: 0;
+//         border-radius: 5px;
+//         padding: 10px 15px;
+//         letter-spacing: 1.5px;
+//         background-color: #5E7DB5;
+//         cursor: pointer;
+//         outline: none;
+//         color: #fff;
+//         transition: .25s ease-in-out;
+//         margin-top: 20px;
+//         font-family: Montserrat;
+//         font-weight: 200;
+//         font-size: 16px;
+
+//         &:hover {
+//           border: 1px solid 33325A;
+//           text-shadow: 0 0 1px #fff,
+//           0 0 1px #fff;
+//         }
+//       }
+//     }
+//   }
+//}
+
+
+
+
+
+// @import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
+
+// .navbar {
+//   position: relative;
+//   top: 0;
+//   left: 0;
+//   background-color: #000;
+//   width: 100%;
+//   margin: 0;
+//   padding: 10px 10px;
+//   z-index: 1;
+
+//   .PostLogo {
+//     font-family: Staatliches;
+//     color: #fff;
+//     letter-spacing: 2px;
+//     margin: 0;
+//     padding: 0;
+//     text-shadow: 2px 2px blue;
+//   }
+// }
+
+// .bImage {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   background-image: linear-gradient(#000, #333);
+//   height: 100vh;
+//   width: 100vw;
+
+//   .contLogin {
+//     width: 100vw;
+//     height: 100vh;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+
+//     .left {
+//       width: 100%;   
+//       max-width: 180px;    
+//     }
+
+//     .formLogin {
+//       width: 400px;
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: center;
+
+//       .typewriter h1 {
+//         width: 100%;
+//         max-width: 125px;
+//         margin-bottom: 15px;
+//         color: #fff;
+//         text-shadow: 2px 2px blue;
+//         font-family: Staatliches;
+//         overflow: hidden;
+//         border-right: .15em solid;
+//         white-space: nowrap;
+//         letter-spacing: .3em;
+//         animation:
+//           typing 2s steps(20, end),
+//           blink-caret .5s step-end infinite;
+//       }
+
+//       @keyframes typing {
+//         from {
+//           width: 0
+//         }
+
+//         to {
+//           width: 100%
+//         }
+//       }
+
+//       @keyframes blink-caret {
+
+//         from,
+//         to {
+//           border-color: transparent
+//         }
+
+//         50% {
+//           border-color: #fff;
+//         }
+//       }
+
+//       .titleLogin {
+//         font-size: 45px;
+//         font-family: Staatliches;
+//         text-align: center;
+//         color: #fff;
+//         letter-spacing: 2px;
+//         font-weight: 300;
+//         text-shadow: 2px 2px 5px rgba(0,0,0, .5);
+//         margin: 0;
+//       }
+
+//       input {
+//         border-radius: 5px;
+//         padding: 13px;
+//         margin-bottom: 10px;
+//         border: 0;
+//         color: #666666;
+//         outline: none;
+//       }
+
+//       .savePassword {
+//         display: flex;
+//         align-items: center;
+
+//         input[type=checkbox] {
+//           margin: 0 5px 0 0;
+//           min-width: 18px;
+//           min-height: 18px;
+//         }
+
+//         .remember {
+//           color: #eee;
+//           text-shadow: 1px 1px 3px rgba(0,0,0, .5);
+//           font-family: Staatliches;
+//           letter-spacing: 1.5px;
+//         }
+//       }
+
+//       .btn {
+//         border: 1px solid white;
+//         border-radius: 5px;
+//         padding: 15px 0;
+//         letter-spacing: 1.5px;
+//         background-color: transparent;
+//         cursor: pointer;
+//         outline: none;
+//         color: white;
+//         transition: .3s ease-in-out;
+//         margin-top: 20px;
+//         font-family: Staatliches;
+//         font-size: 18px;
+//         letter-spacing: 2px;
+//         text-transform: uppercase;
+
+//         &:hover {
+//           border: 1px solid white;
+//           text-shadow: 0 0 1px #fff,
+//           0 0 2px #fff;
+//         }
+//       }
+//     }
+
+//     .right {
+//       width: 100%;
+//       max-width: 180px;
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 1000px) {
+//   .navbar {
+//     position: relative;
+//     top: 0;
+//     left: 0;
+//     background-color: #000;
+//     width: 100%;
+//     margin: 0;
+//     padding: 10px 10px;
+//     z-index: 2;
+
+//     .PostLogo {
+//       font-family: Staatliches;
+//       color: #fff;
+//       letter-spacing: 2px;
+//       margin: 0;
+//       padding: 0;
+//       text-shadow: 2px 2px blue;
+//     }
+//   }
+
+//   .bImage {
     
-    .contLogin {
-      z-index: 1;
-      .left {
-        display: none;
-      }
+//     &::before {
+//       content: "";
+//       position: fixed;
+//       left: 0;
+//       right: 0;
+//       z-index: 1;
+//       display: block;
+//       background: url('../../../assets/bgMobile.jpg');
+//       height: 100vh;
+//       -webkit-filter: blur(3px);
+//       -moz-filter: blur(3px);
+//       -o-filter: blur(3px);
+//       -ms-filter: blur(3px);
+//       filter: blur(3px);
+//     }
+    
+//     .contLogin {
+//       width: 50vw;
+//       position: absolute;
+//       top: 0;
+//       left: 25%;
 
-      .formLogin {
-        z-index: 1;
+//       .left {
+//         display: none;
+//       }
 
-        .typewriter h1 {
-          text-shadow: 2px 2px blue;
-        }
+//       .formLogin {
+//         z-index: 1;
 
-        .btn {
-          background-color: #fff;
-          color: blue;
-          border: 0;
+//         .typewriter h1 {
+//           text-shadow: 2px 2px blue;
+//         }
 
-          &:hover{
-            border: 0;
-          }
-        }
-      }
-      .right {
-        display: none;
-      }
-    }
-  }
-}
+//         .btn {
+//           background-color: #fff;
+//           color: blue;
+//           border: 0;
 
-@media screen and (min-width: 701px) {
-  .bImage {
+//           &:hover{
+//             border: 0;
+//           }
+//         }
+//       }
+//       .right {
+//         display: none;
+//       }
+//     }
+//   }
+// }
 
-    .contLogin {
-      z-index: 1;
+// // @media screen and (min-width: 701px) {
+// //   .bImage {
 
-      .left {
-        width: 100%;
-        max-width: 100px;
-      }
+// //     .contLogin {
+// //       z-index: 1;
 
-      .right {
-        width: 100%;
-        max-width: 100px;
-      }
-    }
-  }
-}
+// //       .left {
+// //         width: 100%;
+// //         max-width: 100px;
+// //       }
 
-@media screen and (min-width: 1000px) {
-  .bImage {
+// //       .right {
+// //         width: 100%;
+// //         max-width: 100px;
+// //       }
+// //     }
+// //   }
+// // }
 
-    .contLogin {
-      z-index: 1;
+// // @media screen and (min-width: 1000px) {
+// //   .bImage {
 
-      .left {
-        width: 100%;
-        max-width: 150px;
-      }
+// //     .contLogin {
+// //       z-index: 1;
 
-      .right {
-        width: 100%;
-        max-width: 150px;
-      }
-    }
-  }
-}
+// //       .left {
+// //         width: 100%;
+// //         max-width: 150px;
+// //       }
+
+// //       .right {
+// //         width: 100%;
+// //         max-width: 150px;
+// //       }
+// //     }
+// //   }
+// // }
 

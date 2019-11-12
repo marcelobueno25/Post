@@ -1,8 +1,6 @@
 import React from "react";
 import api from "../../services/api";
 import './scss/style.scss';
-import leftBg from '../../assets/k1.png';
-import rightBg from '../../assets/k2.png';
 
 class Login extends React.Component {
   constructor(props) {
@@ -34,9 +32,71 @@ class Login extends React.Component {
   render () {
     return (
       <>
+      <div className="cardLogin">
+        <div className = "cardLogin__item">
+          <div className = "cardLogin__img"></div>
+          <div>
+            <div className = "cardLogin__title"> LOGIN ON POST </div>
+            
+            <form className = "formLogin" onSubmit = {this.handleSubmit}>
+              <input type = "email" id = "email" placeholder = "E-mail" onChange = {event => this.setState({email: event.target.value})} /> 
+
+              <input type = "password" id = "password" placeholder = "Senha" autoComplete = "password" value = {this.state.password} onChange = {event => this.setState({password: event.target.value})}/> 
+
+                <div className = "savePassword">
+                  <input type = "checkbox" id = "checkbox" />
+                  <label className = "remember" > Lembrar minha senha </label>  
+                </div>
+                <button className = "btn" type = "submit" > Entrar </button> 
+                <label> {this.state.texto} </label>  
+            </form>
+          </div>
+        </div>
+      </div>
+        
+        {/* <div className="center">  
+        <div className = "title">
+          <h1> LOGIN ON <span>post</span> </h1> 
+        </div> 
+        <div className = "box">
+            <form className = "formLogin" onSubmit = {this.handleSubmit}>
+            <input type = "email" id = "email" placeholder = "E-mail" onChange = {event => this.setState({email: event.target.value})} /> 
+
+            <input type = "password" id = "password" placeholder = "Senha" autoComplete = "password" value = {this.state.password} onChange = {event => this.setState({password: event.target.value})}/> 
+
+            <div className = "savePassword">
+              <input type = "checkbox" id = "checkbox" />
+              <label className = "remember" > Lembrar minha senha </label>  
+            </div>
+              <button className = "btn" type = "submit" > Entrar </button> 
+              <label> {this.state.texto} </label>  
+          </form>
+        </div>
+      </div>     */}
+      </>    
+    )
+  }
+}
+
+export default Login;
+
+          {/* <div className="backG">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12 main">
+                <h1 className="mainTitle"> Bem vindo ao Post!</h1>
+              </div>
+            </div>  
+          </div>  
+        </div>  */}
+
+{/* 
+         <div class="navbar">
+          <h1 className="PostLogo">Post</h1>
+        </div>
         <div className="bImage">
           <div className="contLogin">
-            <img className="left" src={leftBg}/>
+            <img className="left" src={leftBg} alt="left bracket"/>
             <form className= "formLogin" onSubmit = {this.handleSubmit}>
               <div className="typewriter">
                 <h1>LOGIN</h1>
@@ -45,17 +105,11 @@ class Login extends React.Component {
               <input type="password" id="password" placeholder="Senha" autoComplete="password" value={this.state.password} onChange={event => this.setState({password: event.target.value})} />
               <div className="savePassword">
                 <input type="checkbox" id = "checkbox" />
-                <p className="remember"> Lembrar minha senha </p> 
+                <label className="remember"> Lembrar minha senha </label> 
               </div>
               <button className="btn" type="submit"> Entrar </button> 
               <label> {this.state.texto} </label> 
             </form>
-            <img className="right" src={rightBg} />
+            <img className="right" src={rightBg} alt="right bracket" />
           </div>  
-        </div>
-      </>
-    )
-  }
-}
-
-export default Login;
+        </div>  */} 
