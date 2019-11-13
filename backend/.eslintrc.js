@@ -21,6 +21,10 @@ module.exports = {
   },
   plugins: ["@typescript-eslint"],
   rules: {
+    "class-methods-use-this": "off",
+    "no-param-reassign": "off",
+    "no-unused-vars": ["error", { argsIgnorePattern: "next" }],
+    camelcase: "off",
     quotes: ["error", "double"],
     semi: ["error", "always"]
   }
