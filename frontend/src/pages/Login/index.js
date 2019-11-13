@@ -49,6 +49,9 @@ class Login extends React.Component {
                 </div>
                 <button className = "btn" type = "submit" > Entrar </button> 
                 <label> {this.state.texto} </label>  
+                <div className="alignAcc">
+                  <a href="#" className="createAcc">criar conta</a>
+                </div>
             </form>
           </div>
         </div>

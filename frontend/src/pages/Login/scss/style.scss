@@ -212,7 +212,8 @@ body {
       outline: none;
       color: map-get($colors, 'white');
       transition: .25s ease-in-out;
-      margin-top: 20px;
+      margin-top: 15px;
+      margin-bottom: 10px;
       font-family: Montserrat;
       font-weight: 200;
       font-size: 16px;
@@ -222,5 +223,24 @@ body {
         0 0 1px map-get($colors, 'white');
       }
     }
+
+    .alignAcc {
+      text-align: center;
+
+      .createAcc {
+        font-family: Montserrat;
+        color: map-get($colors, 'primary');
+        text-decoration: none;
+        transition: .25s ease-in-out;
+        border-bottom: 1px solid transparent;
+        font-size: 15px;
+
+        &:hover {
+          border-bottom: 1px solid map-get($colors, 'primary');
+        }
+      }
+    }
+
+    
   }
 }
