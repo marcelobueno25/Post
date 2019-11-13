@@ -43,15 +43,15 @@ class Login extends React.Component {
 
               <input type = "password" id = "password" placeholder = "Senha" autoComplete = "password" value = {this.state.password} onChange = {event => this.setState({password: event.target.value})}/> 
 
-                <div className = "savePassword">
-                  <input type = "checkbox" id = "checkbox" />
-                  <label className = "remember" > Lembrar minha senha </label>  
-                </div>
-                <button className = "btn" type = "submit" > Entrar </button> 
-                <label> {this.state.texto} </label>  
-                <div className="alignAcc">
-                  <a href="#" className="createAcc">criar conta</a>
-                </div>
+              <div className = "savePassword">
+                <input type = "checkbox" id = "checkbox" />
+                <label className = "remember" > Lembrar minha senha </label>  
+              </div>
+              <button className = "btn" type = "submit" > Entrar </button> 
+              <label> {this.state.texto} </label>  
+              <div className="alignAcc">
+                <a href="/register" className="createAcc">criar conta</a>
+              </div>
             </form>
           </div>
         </div>
