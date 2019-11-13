@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,900&display=swap');
+@import '../../../App.scss';
+
+
+.btn-1{
+  border: 0;
+  border-radius: 5px;
+  padding: 10px 11px;
+  letter-spacing: 1.5px;
+  background-color: map-get($colors, 'secundary');
+  cursor: pointer;
+  outline: none;
+  color: map-get($colors, 'white');
+  transition: .25s ease-in-out;
+  margin-top: 10px;
+  font-family: Montserrat;
+  font-weight: 200;
+  font-size: 16px;
+
+  &:hover {
+    text-shadow: 0 0 1px map-get($colors, 'white'),
+      0 0 1px map-get($colors, 'white');
+
+      background-color: darken(map-get($colors, 'secundary'), 5%)
+  }
+}
