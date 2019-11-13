@@ -34,23 +34,12 @@ class UserController {
   // Login
   public async store (req: Request, res: Response): Promise<Response> {
     const { email, password } = req.body;
-    const user = await User.findOne({email}).select("+password");
+    const user = await User.findOne({
+      email
+    }).select("+password");
     if (!user) { return res.send({ error: "Email não encontrado" }); }
     if (!await bcrypt.compare(password, user.password)) { return res.send({ error: "Senha Invalida" }); }
-    await bcrypt.hash(req.body.password, salt, function (_, hash) {
-      User.create({
-        name,
-        email,
-        password: hash
-      }).then(
-        function (user: any) {
-          return res.send({ user });
-        }
-      ).catch(() => {
-        return res.send({ error: "Problema para cadastrar Usuario" });
-      });
-    })
-  
+    res.send({ user });
   }
 }
 
