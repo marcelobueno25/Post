@@ -40,8 +40,8 @@ class UserController {
     const user = await User.findOne({
       email
     }).select("+password");
-    if (!user) { return res.send({ error: "Email não encontrado" }); }
-    if (!await bcrypt.compare(password, user.password)) { return res.send({ error: "Senha Invalida" }); }
+    if (!user) { return res.send({ error: "Email not found" }); }
+    if (!await bcrypt.compare(password, user.password)) { return res.send({ error: "Invalid password" }); }
     res.send({ user });
   }
 }
