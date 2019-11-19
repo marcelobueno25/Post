@@ -32,11 +32,11 @@ class Login extends React.Component {
   render () {
     return (
       <>
-      <div className="cardLogin">
-        <div className = "cardLogin__item">
-          <div className = "cardLogin__img"></div>
+      <div id="login">
+        <div className = "login_item">
+          <div className = "login_img"></div>
           <div>
-            <div className = "cardLogin__title"> LOGIN ON POST </div>
+            <div className = "login_title"> LOGIN ON POST </div>
             
             <form className = "formLogin" onSubmit = {this.handleSubmit}>
               <input type = "email" id = "email" placeholder = "E-mail" onChange = {event => this.setState({email: event.target.value})} /> 
@@ -47,7 +47,7 @@ class Login extends React.Component {
                 <input type = "checkbox" id = "checkbox" />
                 <label className = "remember" > Lembrar minha senha </label>  
               </div>
-              <button className = "btn" type = "submit" > Entrar </button> 
+              <a href="/home" className = "btn" type = "submit" > Entrar </a> 
               <label> {this.state.texto} </label>  
               <div className="alignAcc">
                 <a href="/register" className="createAcc">criar conta</a>
