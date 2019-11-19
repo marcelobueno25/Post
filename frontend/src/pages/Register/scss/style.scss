@@ -3,25 +3,269 @@
 @import '../../../App.scss';
 
 
-.btn-1{
-  border: 0;
+@import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,900&display=swap');
+@import '../../../App.scss';
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(#5E7DB5, #33325A);
+}
+
+#register {
+  max-width: 650px;
+  width: 100%;
+  background: map-get($colors, 'white');
+  box-shadow: 5px 5px 3px rgba(34, 35, 58, 0.5);
+  padding: 25px;
   border-radius: 5px;
-  padding: 10px 11px;
-  letter-spacing: 1.5px;
-  background-color: map-get($colors, 'secundary');
-  cursor: pointer;
-  outline: none;
-  color: map-get($colors, 'white');
-  transition: .25s ease-in-out;
-  margin-top: 10px;
-  font-family: Montserrat;
-  font-weight: 200;
-  font-size: 16px;
+  transition: all .3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  &:hover {
-    text-shadow: 0 0 1px map-get($colors, 'white'),
-      0 0 1px map-get($colors, 'white');
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('../../../assets/backColor.png');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+  }
 
-      background-color: darken(map-get($colors, 'secundary'), 5%)
+  @media screen and (max-width: 992px) {
+    // max-width: 680px;
+    // height: 400px;
+  }
+
+  @media screen and (max-width: 768px) {
+    min-height: 500px;
+    height: auto;
+    // margin: 180px auto;
+    width: 500px;
+  }
+
+  @media screen and (max-width: 500px) {
+    min-height: 500px;
+    height: auto;
+    // margin: 180px auto;
+    width: 350px;
+  }
+
+
+  @media screen and (max-height: 500px) and (min-width: 992px) {
+    height: 350px;
+  }
+
+  .register_item {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      max-width: 100%;
+    }
+  }
+
+  .register_img {
+    width: 300px;
+    flex-shrink: 0;
+    height: 300px;
+    background-image: url('../../../assets/bgpplR.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: map-get($colors, 'lighter-lilac');
+    border-radius: 5px;
+    transform: translateX(-80px);
+    overflow: hidden;
+    box-shadow: 5px 5px 8px map-get($colors, 'shadow');
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0;
+      border-radius: 20px;
+      transition: all .3s;
+    }
+
+
+    @media screen and (max-width: 992px) {
+      // width: 45%;
+    }
+
+    @media screen and (max-width: 768px) {
+      transform: translateY(-20%);
+      max-width: 100%;
+      width: 350px;
+    }
+
+    @media screen and (max-width: 568px) {
+      max-width: 100%;
+      width: 350px;
+    }
+
+    @media screen and (max-height: 500px) and (min-width: 992px) {
+      height: 270px;
+    }
+  }
+
+  .register_content {
+    padding-right: 25px;
+
+    @media screen and (max-width: 768px) {
+      margin-top: -80px;
+      text-align: center;
+      padding: 0 30px;
+    }
+
+    @media screen and (max-width: 576px) {
+      padding: 0
+    }
+
+    >* {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: all .4s;
+    }
+  }
+
+  .register_title {
+    color: map-get($colors, 'primary');
+    text-shadow: 2px 2px map-get($colors, 'light-green');
+    letter-spacing: 2px;
+    font-size: 34px;
+    position: relative;
+    z-index: 1;
+    margin-right: 5px;
+    white-space: nowrap;
+    text-align: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 50%;
+      background-color: map-get($colors, 'light-lilac');
+      z-index: -1;
+      opacity: .5;
+    }
+  }
+
+  .register_text {
+    color: #4e4a67;
+    margin-bottom: 30px;
+    line-height: 1.5em;
+  }
+
+  .formRegister {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    width: 250px;
+
+    input {
+      border-radius: 5px;
+      padding: 13px;
+      margin-bottom: 10px;
+      border: 1px solid #D0C6BC;
+      color: map-get($colors, 'primary');
+      outline: none;
+    }
+
+    .savePassword {
+      display: flex;
+      align-items: center;
+
+      input[type=checkbox] {
+        margin: 0 5px 0 0;
+        min-width: 17px;
+        min-height: 17px;
+      }
+
+      .remember {
+        color: map-get($colors, 'primary');
+        font-family: Montserrat;
+        font-size: 13px;
+      }
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 5px;
+      padding: 10px 15px;
+      letter-spacing: 1.5px;
+      background-color: map-get($colors, 'primary');
+      cursor: pointer;
+      outline: none;
+      color: map-get($colors, 'white');
+      transition: .25s ease-in-out;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      font-family: Montserrat;
+      font-weight: 200;
+      font-size: 16px;
+
+      &:hover {
+        text-shadow: 0 0 1px map-get($colors, 'white'),
+          0 0 1px map-get($colors, 'white');
+      }
+    }
+
+    .btn-1 {
+      border: 0;
+      border-radius: 5px;
+      padding: 10px 11px;
+      letter-spacing: 1.5px;
+      background-color: map-get($colors, 'secundary');
+      cursor: pointer;
+      outline: none;
+      color: map-get($colors, 'white');
+      transition: .25s ease-in-out;
+      margin-top: 10px;
+      font-family: Montserrat;
+      font-weight: 200;
+      font-size: 16px;
+
+      &:hover {
+        text-shadow: 0 0 1px map-get($colors, 'white'),
+          0 0 1px map-get($colors, 'white');
+
+        background-color: darken(map-get($colors, 'secundary'), 5%)
+      }
+    }
+
+    .alignAcc {
+      text-align: center;
+
+      .createAcc {
+        font-family: Montserrat;
+        color: map-get($colors, 'primary');
+        text-decoration: none;
+        transition: .25s ease-in-out;
+        border-bottom: 1px solid transparent;
+        font-size: 15px;
+
+        &:hover {
+          border-bottom: 1px solid map-get($colors, 'primary');
+        }
+      }
+    }
   }
 }

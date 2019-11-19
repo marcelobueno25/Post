@@ -1,52 +1,3 @@
-// import React, { useState } from "react";
-// import api from "../../services/api";
-
-// export default function Register({ history }) {
-//   const [name, setName] = useState("");
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-
-//   async function handleSubmit(event) {
-//     event.preventDefault();
-//     await api.post("/register", { name, email, password });
-//   }
-
-//   return (
-//     <>
-//       <form onSubmit={handleSubmit}>
-//         <label htmlFor="nome">NOME</label>
-//         <input
-//           type="text"
-//           id="nome"
-//           placeholder="Nome"
-//           value={name}
-//           onChange={event => setName(event.target.value)}
-//         />
-//         <label htmlFor="email">E-MAIL</label>
-//         <input
-//           type="email"
-//           id="email"
-//           placeholder="E-mail"
-//           value={email}
-//           onChange={event => setEmail(event.target.value)}
-//         />
-//         <label htmlFor="password">SENHA</label>
-//         <input
-//           type="password"
-//           id="password"
-//           placeholder="Senha"
-//           value={password}
-//           onChange={event => setPassword(event.target.value)}
-//         />
-//         <button className="btn" type="submit">
-//           Cadastrar
-//         </button>
-//       </form>
-//     </>
-//   );
-// }
-
-
 import React from "react";
 import api from "../../services/api";
 import './scss/style.scss';
@@ -55,8 +6,10 @@ class Registrar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: "",
       email: "",
       password: "",
+      confirmPassword: "",
       texto: ""
     }
   }
@@ -83,28 +36,38 @@ class Registrar extends React.Component {
     }
   }
 
+  validarSenha = () => {
+    if (this.state.password != "" && this.state.confirmPassword != "" && this.state.password === this.state.confirmPassword) {
+      this.props.history.push('/login')
+    } else {
+      alert('As senhas digitadas estão diferentes');
+       this.refs.password.value = '';
+       this.refs.password1.value = '';
+    }
+  }
+
 
   render() {
     return ( 
     <>
-    <div className = "cardLogin">
-      <div className = "cardLogin__item" >
-        <div className = "cardLogin__img" > </div>
+    <div id="register">
+      <div className ="register_item" >
+        <div className ="register_img" > </div>
         <div>
-          <div className = "cardLogin__title" > Criar conta </div>
+          <div className ="register_title" > Criar conta </div>
 
-          <form className = "formLogin" onSubmit = {this.handleSubmit}>
-            <input type = "text" id = "name" placeholder = "Nome completo" />
-            <input type = "email" id = "email" placeholder = "E-mail" onChange = {event => this.setState({email: event.target.value})}/> 
-            <input type = "password" id = "password" placeholder = "Senha" autoComplete = "password" value = {this.state.password} onChange = {event => this.setState({password: event.target.value})}/> 
+          <form className ="formRegister" onSubmit = {this.handleSubmit}>
+            <input type ="text" id ="name" placeholder ="Nome completo" />
+            <input type ="email" id ="email" placeholder ="E-mail" onChange = {event => this.setState({email: event.target.value})}/> 
+            <input type ="password" id ="password" name="password" ref="password" placeholder ="Senha" size="10" maxLength="10" onChange = {event => this.setState({password: event.target.value})} />
+            <input type ="password" id ="password1" name="password1" ref="password1" placeholder ="Repetir a senha"  size="10" maxLength="10" onChange = {event => this.setState({confirmPassword: event.target.value})} />  
 
-            <button className = "btn-1" type = "submit"> Cadastrar com facebook </button>  
-
-            <button className = "btn" type = "submit"> Cadastrar </button>  
+            <button className ="btn-1" type ="submit"> Cadastrar com facebook </button>  
+            <button className ="btn" type ="submit" onClick={ this.validarSenha }> Cadastrar </button>  
 
             <label> {this.state.texto} </label>   
-            <div className = "alignAcc">
-              <a href = "/login" className = "createAcc"> Já tenho cadastro </a> 
+            <div className ="alignAcc">
+              <a href ="/login" className ="createAcc"> já tenho cadastro </a> 
             </div> 
           </form> 
         </div> 
