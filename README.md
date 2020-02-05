@@ -12,6 +12,7 @@ React <br/>
 React Native <br/>
 Expo <br/>
 
+<br/><br/>
 
 <h2>📝 Licença</h2> <br/>
 Esse projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
